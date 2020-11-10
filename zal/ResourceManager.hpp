@@ -19,7 +19,7 @@ public:
 
   ResourceManager(const ResourceManager& rs)
   {
-        nowy = new Resource{*rs.res};
+        nowy = new Resource{*rs.nowy};
         //std::cout << "konstruktor kopiujacy zadzialal- "<< nowy << "\n";
   }
 
