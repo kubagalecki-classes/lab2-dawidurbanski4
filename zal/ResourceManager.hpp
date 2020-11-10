@@ -19,17 +19,18 @@ public:
 
   ResourceManager(const ResourceManager& rs)
   {
-        nowy = new Resource{*rs.nowy};
+        nowy = new Resource
+        *nowy=*rs.nowy;
         //std::cout << "konstruktor kopiujacy zadzialal- "<< nowy << "\n";
   }
 
   ResourceManager& operator=(const ResourceManager& rs)
   {
-        if (!(nowy) == nullptr)) {
+        if (this != &rs) {
             //std::cout << "umarl\n";
-            delete nowy;
+            nowy = *rs.nowy;
         }
-        nowy = new Resource{*rs.nowy};
+        
         //std::cout << "operator kopiujacy zadzialal- "<< nowy << "\n";
         return *this;
   }
