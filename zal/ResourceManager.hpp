@@ -66,6 +66,6 @@ public:
 
 private:
 
-    Resource* nowy = nullptr;
+    Resource *nowy;
 
 };
