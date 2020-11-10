@@ -36,7 +36,7 @@ public:
 
   ResourceManager(ResourceManager&& rs)
   {
-        nowy    = move(rs.nowy);
+        nowy    = rs.nowy;
         //std::cout << "konstruktor przenoszacy zadzialal\n";
         rs.nowy = nullptr;
   }
@@ -48,14 +48,10 @@ public:
       //std::cout << "Przenoszacy blad\n";
       return *this;
     }
-    else if (!(nowy == nullptr))
-    {
-      //std::cout << "selfDeleting\n";
-      delete nowy;
-    }
+    delete nowy;
 
-    std::cout << "operator przenoszacy\n";
-    nowy = move(rs.nowy);
+    //std::cout << "operator przenoszacy\n";
+    nowy = rs.nowy;
     rs.nowy = nullptr;
     return *this;
     }
