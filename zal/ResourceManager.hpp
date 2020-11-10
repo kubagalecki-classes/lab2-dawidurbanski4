@@ -13,31 +13,31 @@ public:
 
   ~ResourceManager()
   {
-    std::cout << "ResourceManager umarl i "<< nowy << "umarl \n";
+    //std::cout << "ResourceManager umarl i "<< nowy << "umarl \n";
     delete nowy;
   }
 
   ResourceManager(const ResourceManager& rs)
   {
         nowy = new Resource{*rs.res};
-        std::cout << "konstruktor kopiujacy zadzialal- "<< nowy << "\n";
+        //std::cout << "konstruktor kopiujacy zadzialal- "<< nowy << "\n";
   }
 
   ResourceManager& operator=(const ResourceManager& rs)
   {
         if (!(nowy) == nullptr)) {
-            std::cout << "umarl\n";
+            //std::cout << "umarl\n";
             delete nowy;
         }
         nowy = new Resource{*rs.nowy};
-        std::cout << "operator kopiujacy zadzialal- "<< nowy << "\n";
+        //std::cout << "operator kopiujacy zadzialal- "<< nowy << "\n";
         return *this;
   }
 
   ResourceManager(ResourceManager&& rs)
   {
         nowy    = move(rs.nowy);
-        std::cout << "konstruktor przenoszacy zadzialal\n";
+        //std::cout << "konstruktor przenoszacy zadzialal\n";
         rs.nowy = nullptr;
   }
 
@@ -45,16 +45,16 @@ public:
   {
     if (&rs == this)
     {
-      std::cout << "Przenoszacy blad\n";
+      //std::cout << "Przenoszacy blad\n";
       return *this;
     }
     else if (!(nowy == nullptr))
     {
-      std::cout << "selfDeleting\n";
+      //std::cout << "selfDeleting\n";
       delete nowy;
     }
 
-    cout << "operator przenoszacy\n";
+    std::cout << "operator przenoszacy\n";
     nowy = move(rs.nowy);
     rs.nowy = nullptr;
     return *this;
