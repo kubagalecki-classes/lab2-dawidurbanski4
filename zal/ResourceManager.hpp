@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Resource.hpp"
-#include <iostream>
+//#include <iostream>
 
 class ResourceManager
 {
@@ -17,7 +17,7 @@ public:
     delete nowy;
   }
 
-  ResourceManager(const ResourceManager& rs)
+  ResourceManager(const ResourceManager & rs)
   {
         nowy = new Resource
         *nowy=*rs.nowy;
@@ -28,7 +28,7 @@ public:
   {
         if (this != &rs) {
             //std::cout << "umarl\n";
-            nowy = *rs.nowy;
+            *nowy = *rs.nowy;
         }
         
         //std::cout << "operator kopiujacy zadzialal- "<< nowy << "\n";
@@ -49,8 +49,8 @@ public:
       //std::cout << "Przenoszacy blad\n";
       return *this;
     }
+    
     delete nowy;
-
     //std::cout << "operator przenoszacy\n";
     nowy = rs.nowy;
     rs.nowy = nullptr;
