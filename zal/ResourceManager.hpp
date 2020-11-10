@@ -30,7 +30,7 @@ public:
             delete nowy;
         }
         nowy = new Resource{*rs.nowy};
-        std::cout << "operator kopiujacy zadzialal- "<< res << "\n";
+        std::cout << "operator kopiujacy zadzialal- "<< nowy << "\n";
         return *this;
   }
 
